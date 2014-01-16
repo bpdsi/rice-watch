@@ -1,0 +1,57 @@
+table.search th{
+	/*font-size : 90%;*/
+	font-size : 10.0pt;
+	font-family: Tahoma;
+	background : #638dd1;
+}
+
+table.search td {
+	/*font-size : 80%;*/
+	font-size : 10.0pt;
+	font-family: Tahoma;
+	background : #cdd7e9;
+}
+
+table th {
+	/*font-size : 80%;*/
+	font-size : 10.0pt;
+	background: #638dd1;
+}
+
+table td {
+	/*font-size : 70%;*/
+	font-size : 10.0pt;
+	background: #cdd7e9;
+}
+
+table.input th{
+	/*font-size : 90%;*/
+	font-size : 10.0pt;
+	font-family: Tahoma;
+	background : #638dd1;
+}
+table.input td {
+	/*font-size : 80%;*/
+	font-size : 10.0pt;
+	font-family: Tahoma;
+	background : #d6e3f8;
+}
+td.button {
+	background : #ffffff;
+}	
+
+select {
+	font-family: Tahoma;
+}
+
+input {
+	font-family: Tahoma;
+}
+
+textarea {
+	font-family: Tahoma;
+}
+
+.text {
+	wrap="off";
+}

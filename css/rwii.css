@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+@font-face {
+	font-family: 'rwFont';
+	src: url('rwFont.woff');
+	font-weight: normal;
+	font-style: normal;
+}
+html{
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+}
+body{
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	font-family: rwFont;
+	font-size: 20px;
+}
+select{
+	font-family: rwFont;
+	font-size: 20px;
+}
+.noSpacing{
+	border-collapse: collapse;
+	border-spacing: 0;
+}

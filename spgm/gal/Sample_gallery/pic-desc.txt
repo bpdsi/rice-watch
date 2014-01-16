@@ -1,0 +1,5 @@
+; Do not remove this comment (used for UTF-8 compliance)
+
+_thb_Tux.jpg | This is a caption for Tux's thumbnail.
+Tux.jpg | This is a caption for Tux's picture.<br />Don't forget to check 
+> <a href="http://spgm.sourceforge.net">SPGM website</a> for available updates.

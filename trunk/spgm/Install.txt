@@ -1,0 +1,267 @@
+
+ SPGM - Simple Picture Gallery Manager
+======================================
+Install.txt                     v1.4.7
+
+
+
+        - INSTALLATION GUIDE -
+
+
+
+ CONTENTS
+=========
+
+1 Requirements
+2 SPGM set up procedure
+3 Gallerie creation
+4 Integration into websites
+5 Layout configuration
+6 How can I make my own theme ?
+
+
+
+
+1 - Requirements
+================
+
+A website that is able to run PHP scripts (PHP4)... and a few pictures !
+
+
+2 - Set up procedure
+====================
+
+That is a pretty easy step. Just uncompress the SPGM distribution you have 
+just downloaded and upload the spgm directory to your website, using your 
+favorite FTP client.
+Your gallery will then be reachable through the following URL:
+http:// your-website-url /spgm/index.php 
+
+SPGM can be run as a standalone application (as it is out of the box) 
+or as part of a template (your website, CGI wrappers, CMS like PHPNuke, etc.).
+If displaying your pictures is just what you're looking for, don't change 
+anything, you've got the URL. You can edit the index.php file though, to change
+your gallery title, update the HTML headers and so on...
+If you want to integrate a picture gallery into your already-existing website 
+instead, refer to section "Integration into websites", below.
+
+Important:
+
+* Make sure each file is readable and each directory is readable/executable 
+  by SPGM (644 and 755 permissions are often required)
+* if the script keeps displaying the listing of the gal directory, whatever 
+  you try to do, your PHP interpreter may not register the parameters passed 
+  in the URL as global variables. You need to edit the spgm.php then, to 
+  change the REGISTER_GLOBALS constant's value to false  
+* some servers used to require a .php3 extension... Renaming the php files is 
+  then mandatory 
+
+
+3 - Gallery creation
+====================
+
+Galleries are merely directories which contain pictures and/or sub-galleries 
+(sub-directories). They are to be put in the gal directory and may be 
+captioned by inserting among their content a "gal-desc.txt" text file 
+containing whatever you want (even PHP code). They can also be previewed using 
+icons, pre-defined thumbnails, or even random thumbnails. Refer to the 
+"Gallery icon type" section in spgm.conf (gal/ directory) to see how to proceed.
+
+Pictures are .jpg / .png / .gif files which must be associated to a thumbnail
+(use your favorite tool for thumbnail edition), and possibly to a caption.
+The thumbnail filename is the picture filename prefixed by "_thb_"
+(e.g. pic01.jpg, _thb_pic01.jpg).
+Captions for pictures from the same gallery are stored in a single
+"pic-desc.txt" file (1 picture caption per line, continue on the next line(s)
+with '>' as the first character if needed). This file can be used to set 
+captions for both pictures and thumbnails, and looks like this :
+
+
+_thb_Tux.jpg | This is a caption for Tux's thumbnail.
+Tux.jpg | This is a caption for Tux's picture.<br />
+>Still descripting Tux.jpg, and now : 
+> here is <a href="">a link</a>.
+...
+
+
+Moreover, pictures and galleries can be sorted using several options (creation 
+date, filenames, explicit sort using simple text files)...
+Refer to spgm.conf for a complete description of those sort options. 
+
+
+Important:
+
+* do not put picture/thumbnail comments on the first line of the pic-tesc.txt
+  file if you use the UTF-8 encoding.
+* a gallery name (i.e. its directory name) must not include quotes/double 
+  quotes, nor whitespaces (use the undescore character instead, which will 
+  be rendered as a whitespace; ex: My_first_gallery).
+  For gallery names using special characters (accentuated characters,
+  apostrophes, symbols...), put the title on the first line of a 
+  "gal-title.txt" text file, located within the gallery.
+* remember that the pictures must be readable by everybody and the galleries
+  must be readable/executable by everybody 
+* don't put pictures directly in the gal directory, they won't be displayed 
+  anyway 
+
+
+Tips:
+* William Denniss wrote a very useful tool (Java JRE 1.4 required) that 
+  automates thumbnail generation and caption assessment...
+  [http://tanksoftware.com/gallmage/]
+* I use the nconvert program (which comes along with the excellent XnView
+  [www.xnview.com]) and a batch script ("tools" directory) to generate 
+  thumnails under windows 
+* it is better to maintain the original picture's ratio when generating 
+  thumbnails and to make all of them the same fixed height 
+
+
+
+4 - Integration into websites
+=============================
+
+If you want to integrate SPGM into you website, follow these instructions.
+
+Let's say your want to call spgm from your main page, index.php and that SPGM
+is installed in a directory named 'spgm-xxx' (index.php and spgm-xxx reside at
+the same level). 
+Considering that index.php handles the general layout of your website and puts 
+many categories' content within it, as the following scheme:
+
+URL param | param value | pointed page
+--------------------------------------
+     id       about       information about the site
+     id       bio         your biography
+     id       gallery     your picture gallery
+
+...then your URL looks like:
+http://yourname.free.fr/index.php?id=about
+
+To make SPGM work from within your website, you'll have to edit spgm.php with
+a text editor and update the following constants (located at the beginning of 
+the file) :
+- DIR_GAL must be 'spgm-xxx/gal' (relative path to the gal directory 
+  from index.php)
+- DIR_LANG must be 'spgm-xxx/lang' (relative path to the lang directory from 
+  index.php)
+- DIR_THEMES must be 'spgm-xxx/themes' (relative path to the themes directory 
+  from index.php)
+
+Now, just require("spgm-xxx/spgm.php") wherever you want in your code.
+
+5 - Layout configuration
+========================
+
+Each gallery can be applied a specific layout configuration which is defined 
+in a spgm.conf file.
+A default configuration file is provided in the SPGM distribution (located 
+in the gal directory). Every property set for a gallery is inherited in all 
+its sub-galleries, which means that the default configuration will be 
+inherited in all your galleries.
+You can override any property by putting another configuration file in the 
+desired gallery... 
+
+Here is the default configuration file which contains an exhaustive list of 
+the properties you can set (check out the file itself for each property's 
+role): 
+
+<?php
+
+  $spgm_cfg['conf']['newStatusDuration'] = 40;
+  $spgm_cfg['conf']['thumbnailsPerPage'] = 10;
+  $spgm_cfg['conf']['thumbnailsPerRow'] = 5;
+  $spgm_cfg['conf']['galleryListingCols'] = 1;
+  $spgm_cfg['conf']['galleryCaptionPos'] = BOTTOM;
+  $spgm_cfg['conf']['subGalleryLevel'] = 0;
+  $spgm_cfg['conf']['galleryOrientation'] = ORIENTATION_LEFTRIGHT;
+  $spgm_cfg['conf']['gallerySortType'] = SORTTYPE_CREATION_DATE;
+  $spgm_cfg['conf']['gallerySortOptions'] = SORT_DESCENDING;
+  $spgm_cfg['conf']['pictureSortType'] = SORTTYPE_CREATION_DATE;
+  $spgm_cfg['conf']['pictureSortOptions'] = SORT_DESCENDING;
+  $spgm_cfg['conf']['pictureInfoedThumbnails'] = true;
+  $spgm_cfg['conf']['captionedThumbnails'] = true;
+  $spgm_cfg['conf']['pictureCaptionedThumbnails'] = true;
+  $spgm_cfg['conf']['filenameWithThumbnails'] = true;
+  $spgm_cfg['conf']['filenameWithPictures'] = true;
+  $spgm_cfg['conf']['enableSlideshow'] = true;
+  $spgm_cfg['conf']['fullPictureWidth'] = 640;
+  $spgm_cfg['conf']['fullPictureHeight'] = ORIGINAL_SIZE;
+  $spgm_cfg['conf']['popupOverFullPictures'] = true;
+  $spgm_cfg['conf']['popupPictures'] = true;
+  $spgm_cfg['conf']['popupWidth'] = 800;
+  $spgm_cfg['conf']['popupHeight'] = 600;
+  $spgm_cfg['conf']['popupFitPicture'] = true;
+  $spgm_cfg['conf']['filters'] = 't';
+  $spgm_cfg['conf']['zoomFactors'] = array(50, 100, 150);
+  $spgm_cfg['conf']['exifInfo'] = array('ALL');
+  $spgm_cfg['conf']['galleryIconType'] = GALICON_RANDOM;
+  $spgm_cfg['conf']['galleryIconHeight'] = 40;
+  $spgm_cfg['conf']['galleryIconWidth'] = ORIGINAL_SIZE;
+  $spgm_cfg['conf']['stickySpgm'] = 'true';
+  $spgm_cfg['conf']['language'] = 'fr';
+  $spgm_cfg['conf']['theme'] = 'bvk';
+
+?>
+
+SPGM does also make the use of flavors (a.k.a. themes) to make it match your
+whises. It comes with a flavor which is set by default. To change it, just go
+to the flavor page (http://spgm.sourceforge.net/?lg=us&id=themes) and download
+the one you're interested in. Unzip the package and put the resulting directory
+in the SPGM flavor directory (i.e. spgm-xxx/flavors).
+Then :
+- edit spgm-xxx/gal/spgm.conf and change $spgm_cfg['conf']['theme'] to the new
+  flavor directory name (refer to spgm.conf for more details).
+- edit spgm-xxx/index.php, locate the call to the flavor stylesheet  
+  (<link rel="Stylesheet" href="flavors/default/spgm_style.css" />) and change 
+  it according to the location of the new flavor's stylesheet</li>
+
+
+6 - How can I make my own flavor ?
+==================================
+
+The SPGM distribution includes a "flavors" directory where you can put your 
+flavors in. 
+A flavor is basically a directory containing the following resource files: 
+the spgm.thm file (mandatory), which initializes variables to get SPGM to 
+know which resources to use for galleries rendering, image files (optional), 
+and a stylesheet (optional). 
+The spgm.thm for the "default" flavor - which comes within the distribution - 
+looks like this (check out the file itself for each property's role): 
+
+<?php
+
+$spgm_cfg['theme']['gallerySmallIcon']    = 'folder.jpg';
+$spgm_cfg['theme']['galleryBigIcon']      = 'folder.jpg';
+$spgm_cfg['theme']['newItemIcon']         = 'new.jpg';
+$spgm_cfg['theme']['previousPictureIcon'] = 'page_previous.jpg';
+$spgm_cfg['theme']['nextPictureIcon']     = 'page_next.jpg';
+$spgm_cfg['theme']['previousPageIcon']    = 'page_previous.jpg';
+$spgm_cfg['theme']['previousPageIconNot'] = 'page_previous_not.jpg';
+$spgm_cfg['theme']['nextPageIcon']        = 'page_next.jpg';
+$spgm_cfg['theme']['nextPageIconNot']     = 'page_next_not.jpg';
+$spgm_cfg['theme']['firstPageIcon']       = 'page_first.jpg';
+$spgm_cfg['theme']['firstPageIconNot']    = 'page_first_not.jpg';
+$spgm_cfg['theme']['lastPageIcon']        = 'page_last.jpg';
+$spgm_cfg['theme']['lastPageIconNot']     = 'page_last_not.jpg';
+
+?>
+
+Above is an exhaustive list of the variables you can set. 
+
+Note that you are not required to set all of these. Omitting variables 
+identifying icons will only result in a textual representation of what they 
+are supposed to display, whereas omitting the stylesheet only makes your 
+gallery graphically deprived. 
+
+
+Important:
+
+* don't forget to begin and end the spgm.conf file by the <?php and ?> 
+  markers 
+* the resource files the variables refer to must be located in your flavor 
+  directory (i.e. the same directory where spgm.conf is located in) 
+* the value assigned to the variables (which are filenames) and your flavor's 
+  directory name must not contain any whitespaces nor quotes/double quotes 
+
+
+

@@ -1,0 +1,29 @@
+
+ SPGM - Simple Picture Gallery Manager
+======================================
+QuickStart.txt                  v1.4.7
+
+
+
+        - AN SPGM QUICK START GUIDE -
+
+
+I have been given the advice to provide very impatient users with a quick 
+start guide. So there it is !
+Note that the following instructions are not intended for webmasters-beginners.
+So if you can't work it out using this, please refer to the complete guide 
+(Install.txt).
+
+
+1. unzip spgm-xxx.zip and upload spgm/ in your www virtual directory 
+2. under spgm/gal/, create your own directory spgm/gal/firstgal/ to hold 
+   your first image collection 
+3. copy your image my-picture.jpg into spgm/gal/firstgal/ 
+4. make a thumbnail called _thb_my-picture.jpg in spgm/gal/firstgal/
+   (MANDATORY)
+5. Type gallery caption and save to gal-desc.txt in spgm/gal/firstgal/
+   (OPTIONAL)
+6. Type picture caption ('my-picture.jpg | my first caption') 
+   and save to pic-desc.txt in spgm/gal/firstgal/ (OPTIONAL)
+7. Open http://..../spgm/index.php 
+

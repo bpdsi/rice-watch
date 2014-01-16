@@ -1,0 +1,248 @@
+
+ SPGM - Simple Picture Gallery Manager
+======================================
+ChangeLog.txt                   v1.4.7
+
+07-01-2007: v1.4.7
+Bug fix: language packs fixed
+Bug fix: parsing of multiple-line picture comments fixed
+Change: added '_vti_cnf' to the ignored directory list
+
+15-03-2006: v1.4.6
+Bug fix: javascript slideshow fixed
+
+12-03-2006: v1.4.5
+Feature added: REGISTER_GLOBALS mode is now set automatically
+Feature added: sticky hyperlinks are now generated on demand (new 'stickySpgm'
+  option, see spgm.conf), useful whem SPGM is used in "big" templates
+Bug fix: Javascript issue fixed to prevent everlasting loadings of popups
+Bug fix: $cfg really made global for use of SPGM from non-global scopes. 
+  $cfg was also renamed to $spgm_cfg, so do not forget to update spgm.conf 
+  and spgm.thm files, when updating from previous versions 
+Bug fix: fixed "Undefined offset" notices
+Bug fix: SPGM does not ignore folders anymore when encouters "0" folders
+Change: factorized code for hyperlinks generation
+Change: Vietnamese, Galician and Esperanto language packs added, 
+  thanks to Hung Lan Nguyen and Patricia Saco
+
+12-25-2005: v1.4.4
+Feature added: Set-able orientation of thumbnails/picture "blocks"
+Bug fix: Drop-shadowed galleries are now clickable with Internet Explorer
+Change: Serbian language pack added, thanks to Nikola Kotur
+
+10-31-2005: v1.4.3
+Feature added: Hidden galleries
+Feature added: multiple-line captions support in pic-desc.txt
+Feature added: Set-able list of directories to ignore (ex: vti_cnf)
+Feature added: Images and thumbnails can have the same filename 
+  when DIR_THUMBS is used
+Feature added: Full picture dimension can now be set through configuration
+Feature added: Popup over full pictures
+Bug fix: auto-template mode enabled if available only
+Bug fix: Random gallery thumbnail error fixed when DIR_THUMBS is used (thanks
+  to Misha Cohen)
+Bug fix: Random and fixed gallery thumbnails are now surrounded by drop shadows
+Change: ereg_replace changed to str_replace
+Change: Code factorization
+Change: All constants defined using simple quotes
+Change: Default flavor modified
+Change: 3 language packs added : Latvian, Traditional Chinese and Catalan, 
+  thanks to Gints Karklins, Chan Pak Hing, Pau Amaro-Seoane and David Riera
+
+12-27-2004: v1.4.2
+- Feature added: toggle-able drop shadows surrounding pictures and thumbnails
+- Feature added: toggle-able EXIF data screen
+- Bug fix: "XHTML 1.0 strict" compliance fixed
+- Bug fix: Javascript issue fixed when using filters with Opera, 
+  thanks to Herbert Neugebauer
+- Change: thumbnails can now reside in a subdirectory (see DIR_THUMBS
+  constant, in spgm.php)
+
+11-11-2004: v1.4.1
+- Change: New default theme
+- Change: The special character in pic-desc.txt files has changed from '=' 
+  to '|'. Hyperlinks are now possible in picture captions. 
+- Bug fix: Permission tests are now compatible with every host policies
+- Change: 1 language pack added (Slovak)
+
+05-08-2004: v1.4 (PHP 3 compliance abandoned)
+- Feature added: auto-template mode
+- Change: configuration check improved)
+- Change: 1 language pack added (Russian)
+- Bug fix: undefined variables fixed
+- Bug fix: XHTML 1.0 compliance fixed
+
+01-26-2004: v1.3.5
+- Change: 1 language pack added (Chinese simplified)
+- Bug fix: When PopupFitPicture is disabled, controls are displayed correctly
+- Bug fix: Layout break fixed
+
+12-28-2003: v1.3.4
+- Feature added: Slideshow mode is now toggle-able
+- Change: Picture captioning mechanism more user-friendly (see pic-desc.txt)
+- Change: Gallery names can be extented in a gal-title.txt file to fix issues
+  related to directory names (to support accentuated characters for instance)
+- Change: Resource files renamed (gal-sort.txt, gal-desc.txt, pic-sort.txt,
+  pic-desc.txt)
+- Bug fix: Picture captions are now updated in slideshows
+- Bug fix: Undefined variables fixed
+- Bug fix: Layout does not blow anymore in slideshow mode
+- Bug fix: Javascript 'Object expected' bug fixed
+
+11-02-2003: v1.3.3
+- Feature added: javascript slideshow added
+- Feature added: pop-up frames can now fit picture dimensionsi
+- Feature added: toggle-able display of the picture's filename along with the
+  thumbnails/pictures (introduction of a new CSS class : td-picture-filename)
+- Change: picture/thumbnail captions are now stored in one single filei
+- Change: added &middot between each thumbnail page number
+- Change: code cleanup: variables renamed
+- Bug fix: 2 undefined variables fixed
+- Bug fix: rowspan attribute fixed
+- Misc: 3 language packs added (Bulgarian, Persian "Farsi", Turkish)
+
+07-27-2003: v1.3.2
+- Feature added: pop-up pictures support
+- Feature added: users can now set the position of the gallery title and 
+  caption (BOTTOM or RIGHT)
+- Bug fix: picture/"thumbnail page" syncing fixed
+- Bug fix: filter 'all' is now displayed while filter 'new' is on
+- Bug fix: undefined variables fixed
+- Change: removed standalone mode
+- Change: generated code shifted to XHTML 1.0 strict compliance
+- Change: URL parameter and function names have been changed (namespace prefix)
+- Change: 'print' function usage improved for better performance
+- Change: icons initialization code is now done once for better performance
+- Change: post initialization check updated 
+  for better performance/error handling
+- Change: reporting mechanism recoded
+- Change: code cleanup: configuration variables re-organized 
+  (use of a global array)
+- Change: subgal_display_level (now $cfg['config']['subGalleryLeve'l]) does 
+  not use the INFINITE value anymore (0 instead)
+- Change: 2 language packs added (Czech, Estonian)
+
+05-24-2003: v1.3.1
+- Feature added: added *true* non-standalone mode (header/footer files 
+  deprecated)
+- Feature added: support for gallery-dedicated thumbnails 
+  (_thb_galleryname.extension located in the gallery directory level)
+- Feature added: Pictures themselves now link to the next picture
+- Change: filter management completely recoded 
+  > $display_thumbnails_with_pic deprecated (see $filters in spgm.conf)
+- Change: supported picture file extensions are now stored in an array for
+  better extensibility
+- Change: when displaying a gallery, sub-galleries links are now displayed 
+  above the thumbnails navigation bar
+- Change: code generation clean-up
+- Change: replaced &gt;/&lt; sequences by &raquo;/&laquo; characters
+- Bug fix: $gallery_listing_column_number now works for the root gallery as well
+- Bug fix: removed captions within ALT tags to avoid layout blow-ups
+- Bug fix: display ASCII arrows whenever graphic resources are not specified 
+  in a theme file
+- Bug fix: Width and height tags are set for _all_ icons
+- Bug fix: minor bug fixes (undefined variables, is_gallery() fixed)
+- Misc.: 6 language packs added (Korean, Croatian, Slovenian, Lithuanian, 
+  Norwegian, Romanian)
+
+
+02-23-2003: v1.3
+- Feature added: new picture highlighting can now be disabled
+- Feature added: introduction of thumbnail-sized gallery icons for graphically
+  improved gallery listing (themes designer have to add one more icon)
+- Feature added: you can now set the number of displayed columns within gallery
+  listings
+- Feature added: ability to display pictures without the thumbnail navigation 
+  bar
+- Feature added: picture information display (right below the thumbnails) can 
+  now be disabled
+- Feature added: pictures can now be sorted against creation date (WARNING: the
+  name of the text file used to explicitely sort pictures has changed:
+  picture.sort)
+- Feature added: galleries can now be explicitely sorted using the same 
+  principles than pictures (i.e. against filenames, creation date or 
+  explicitely sorted using a simple text file: gallery.sort) 
+- Feature added: introduction of two sort criteria (available for both galleries
+  and pictures): ascending or descending. Those are not available when explicit 
+  sort is used.
+- Bug fix: thumbnails' width-height ratio is now correctly preserved for 
+  thumbnailed galleries
+- Bug fix: width and height attributes for the img tag are now declared as to 
+  gallery icons
+- Bug fix: while browsing new pictures, switching between pages now keeps the 
+  filter status to 'new'
+- Bug fix: only directories possibly return true from is_gallery.
+- Bug fix: classes are now CSS 2.0 compliant
+- Code improvements
+- Introduction of a new class for the wrapper table ("table_wrapper")
+- Danish and Hungarian language packs added
+
+
+01-10-2003: v1.2.1
+- Critical bug fix as to URL parameter handling (noticeable on some server 
+  configurations).
+  This bug's consequence is to always display the "unknown picture" error 
+  message. Everyone who encountered this issue should update the package... 
+
+
+01-04-2003: v1.2
+- Bug fix: the 'new' icon (right above the thumbnails) is no longer displayed 
+  from the first new picture found
+- Bug fix as to the use of subgal_display_level (0 value is now invalid).
+  Its value corresponds to the deepest level of the galleries to be displayed
+- Bug fix as to multi-language support
+- Error handling: a warning message is now displayed for each picture that has 
+  no associated thumbnail
+- Error handling: meaningless error messages updated
+- Better ALT tags for pictures/thumbnails: the caption is now displayed when 
+  possible.
+- Feature added: thumbnails can serve as gallery icons
+- Feature added: explicit sort of pictures against a text file (one picture 
+  per line)
+- Quick start guide added
+
+
+07-31-2002: v1.1
+- Bug fix as for the use of $PHP_SELF (this should be the last attempt to get 
+  it to work on every server configuration)
+- Gallery caption filename changed because of Windows filename issues and Linux 
+  default behavior as to .* files: .gal_msg -> gallery.msg
+- Picture filter visual improvement. Minor mistake fixed: Ko -> KB
+- Feature added: toggle-able display of the picture captions along with the 
+  thumbnails
+- Feature added: client side picture scaling for big pictures galleries 
+  (using javascript)
+- Feature added: toggle-able lexicographical sort on galleries names
+- Feature added: multi-language support 
+
+07-11-2002: v1.0.3b
+- Bug fix as to the use of $PHP_SELF (which caused problems with some versions 
+  of UAs like mozilla)
+- new CSS class introduced for the link to SPGM (CLASS_A_SPGM_LINK) 
+  -> modification of the default stylesheet also (remember you can set this 
+  class up the way you want as long as it is _visible_ on each page)
+
+
+07-08-2002: v1.0.2b
+- Added code to handle register_globals (php.ini), whatever its value is 
+  (either ON or OFF)
+- Initialization of _all_ the variables to avoid "Undefined variable" error 
+  messages that appear on some configurations
+- is_picture: check filename patterns first and in a more restrictive manner 
+  for performance improvement
+- README.txt fixed (my email was wrong :), and updated (tips about thumbnails 
+  generation)
+- batch file for thumbnails generation included in the distribution (tools 
+  directory)
+
+
+04-07-2002: v1.0.1b
+- bug fix for header/footer inclusion
+- disabled warning messages for filemtime unsuccessful calls
+- code generation cleanup
+- a few modifications in the spgm.conf comments
+- README.txt completed
+- ChangeLog.txt added
+
+02-07-2002: v1.0b
+Initial release.

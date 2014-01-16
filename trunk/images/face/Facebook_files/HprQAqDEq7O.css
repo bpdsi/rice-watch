@@ -1,0 +1,83 @@
+/*!CK:2330750307!*//*1387161122,178127443*/
+
+
+.fbProfileByline{width:493px;margin-top:4px;line-height:15px}
+.fbProfileBylineFragment,
+.fbProfileNonIconBylineFragment{margin-right:8px;color:#666}
+.fbProfileBylineIcon{margin-bottom:1px;margin-top:1px;vertical-align:bottom}
+.fbProfileLoggedOutByline{width:493px;margin-top:1px;line-height:14px}
+.fbLongBlurb{margin-right:8px;color:#666;padding-bottom:3px}
+.fbProfileBylineContextual .inferenceSource{text-align:center;margin-top:10px}
+.fbProfileBylineContextual .typeahead{width:300px}
+.pagesTimelineButtonPagelet{background-color:#e7ebf2;border-bottom:1px solid #c8d1e2;min-width:122px;padding:13px 0 12px 1px;top:38px;z-index:4}
+.hasPagesManagerNavbar .pagesTimelineButtonPagelet{top:89px}
+.fbTimelineWideRightCol .pagesTimelineButtonPagelet{min-width:244px}
+body.hasVoiceBar .pagesTimelineButtonPagelet{top:64px}
+body.hasVoiceBar.hasPagesManagerNavbar .pagesTimelineButtonPagelet{top:115px}
+.pagesTimelineRightColumn .fbTimelineScrubber{top:87px}
+.hasPagesManagerNavbar .pagesTimelineRightColumn .fbTimelineScrubber{top:138px}
+body.hasVoiceBar .pagesTimelineRightColumn .fbTimelineScrubber{top:113px}
+body.hasVoiceBar.hasPagesManagerNavbar .pagesTimelineRightColumn
+.fbTimelineScrubber{top:164px}
+#createPageButton .img{top:3px}
+#createPageButton{padding-left:6px}
+#profile_minifeed .reportHide{display:none}
+.fbProfileStream .uiStreamMessage .passiveName{font-weight:normal}
+.fbProfileStream .uiStreamMessage a.passiveName{font-weight:bold}
+.sp_an2hhm{background-image:url(/rsrc.php/v2/yj/r/VPnZzIZlZ0f.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:16px;width:16px}
+.sx_55766e{width:35px;height:35px;background-position:0 0}
+.sx_06eb07{width:35px;height:35px;background-position:0 -36px}
+.sx_6f9809{width:35px;height:35px;background-position:0 -72px}
+.sx_b120ab{width:35px;height:35px;background-position:0 -108px}
+.sx_f85282{background-position:-17px -144px}
+.sx_d5c41d{background-position:0 -162px}
+.sx_e34da1{background-position:-17px -161px}
+.sx_5ef29e{background-position:0 -179px}
+.sx_588148{height:17px;background-position:0 -144px}
+.sx_7ddc9e{width:6px;height:11px;background-position:-15px -227px}
+.selected .sx_7ddc9e{background-position:-9px -227px}
+.sx_10d1bc{background-position:-17px -178px}
+.sx_cd937b{width:10px;background-position:0 -196px}
+.sx_cd90a5{width:9px;background-position:-11px -196px}
+.sx_35db19{width:8px;height:13px;background-position:0 -227px}
+.sx_7296b9{width:11px;height:13px;background-position:-21px -196px}
+.sx_5b864e{width:9px;height:13px;background-position:0 -213px}
+.sx_66820e{width:9px;height:13px;background-position:-10px -213px}
+.sx_e5b8e5{width:9px;height:13px;background-position:-20px -213px}
+.sx_b350c8{width:5px;height:7px;background-position:-27px -227px}
+.selected .sx_b350c8{background-position:-22px -227px}
+.sp_ge6du8{background-image:url(/rsrc.php/v2/y7/r/pOq3YdRD4zk.png);background-size:auto;background-repeat:no-repeat;display:inline-block;height:13px;width:9px}
+.sx_af8665{width:11px;height:11px;background-position:-17px -119px}
+.sx_e7424f{width:16px;height:17px;background-position:0 -77px}
+.sx_95314b{width:12px;height:11px;background-position:-19px -46px}
+.sx_448cc9{width:16px;height:16px;background-position:0 -95px}
+.sx_0446ea{width:32px;height:32px;background-position:0 0}
+.sx_bb24a5{height:12px;background-position:-9px -46px}
+.selected .sx_bb24a5{background-position:0 -46px}
+.sx_75319d{width:8px;height:12px;background-position:-8px -112px}
+.selected .sx_75319d{background-position:0 -112px}
+.sx_97984b{background-position:-18px -59px}
+.sx_02cc9d{background-position:-17px -77px}
+.sx_a8715f{background-position:-17px -91px}
+.sx_cc6cf4{background-position:-17px -105px}
+.sx_6948d9{width:8px;height:8px;background-position:-8px -125px}
+.selected .sx_6948d9{background-position:0 -125px}
+.sx_22bd35{width:11px;height:12px;background-position:-11px -33px}
+.selected .sx_22bd35{background-position:0 -33px}
+.sx_902d3f{width:17px;height:17px;background-position:0 -59px}
+.uiStreamSecondaryTime .img{bottom:-2px;position:relative;vertical-align:top}
+._4-rr{display:inline-block}
+._4-rr ._4-rs + ._4-rs{margin-left:-1px}
+._4-rt{position:relative;z-index:1}
+._4-ru{position:relative;z-index:2}
+._4-rs._42fr{position:static}
+._4-rr ._4-rs{-webkit-border-radius:0}
+._4-rv ._4-rs:first-child{-webkit-border-bottom-left-radius:3px;-webkit-border-top-left-radius:3px}
+._4-rv ._4-rs:last-child{-webkit-border-bottom-right-radius:3px;-webkit-border-top-right-radius:3px}
+
+.letterboxedImage{position:relative}
+.verticallyCentered .scaledImage{position:absolute;top:50%}
+.letterboxedImage .scaledImage{margin:0 auto}
+
+#bootloader_Bfbok { height: 42px; }
+.bootloader_Bfbok { display:block !important; }

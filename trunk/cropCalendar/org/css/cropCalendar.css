@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+.form_field{
+	text-align: right;
+}
+.diseaseTable, .pestTable, .animalTable, .methodTable{
+	font-family: Arial;
+	font-size: 13px;
+}
+button{
+	cursor: pointer;
+}
+.pestTD{
+	border:solid 1px #5882FA;
+	background-color:#5882FA;
+	cursor: pointer;
+}
+.diseaseTD{
+	border:solid 1px #2EFE2E;
+	background-color:#2EFE2E;
+	cursor: pointer;
+}
+.animalTD{
+	border:solid 1px #FE642E;
+	background-color:#FE642E;
+	cursor: pointer;
+}
+.methodTD{
+	border:solid 1px #2EFE2E;
+	background-color:#F7FE2E;
+	cursor: pointer;
+}
+.pestTD:hover, .diseaseTD:hover, .animalTD:hover, .methodTD:hover{
+	background-color:#fff;
+}
+.detailTitle{
+	font-weight: bold;
+	text-align: right;
+	vertical-align: top;
+}
+.detailContent{
+	padding-left: 5px;
+	white-space: pre;
+	text-align:justify;
+	text-justify:inter-word;
+	padding-bottom: 5px;
+}

@@ -139,7 +139,7 @@ $listImages.="</table>";
 ?>
 <table class='table_01'  id=\"tblElement\" border=1 style='margin-left:auto;margin-right: auto;margin-top: 5px;width:1000px'>
 	<tr valign="top">
-		<td width="200px" class='table_header'>ชื่อศัตรู</td>
+		<td width="200px" class='table_header'>ชื่อศัตรูข้าว</td>
 		<td><?=$CommonName?></td>
 		<td rowspan="12"><? echo $listImages;?></td>
 	</tr>

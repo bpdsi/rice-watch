@@ -26,10 +26,13 @@
 		<link rel="stylesheet" type="text/css" href="<?=$host?>css/colorbox.css">
 		<script type="text/javascript" src="<?=$host?>js/jquery.colorbox.js"></script>
 		<link rel="stylesheet" type="text/css" href="<?=$host?>css/tpqi.css">
+		<link rel="stylesheet" type="text/css" href="css/rwii.css">
 	</head>
 	<body>
-		<?php include 'mainMenu.php';?>
 		<table class="noSpacing" style="width: 100%;height: 100%;border: none;background: none;">
+			<tr>
+				<td colspan="3"><?php include 'mainMenu.php';?></td>
+			</tr>
 			<tr>
 				<td style="width: auto;"></td>
 				<td style="width: 1000px;padding: 0px;height: 100%;" valign="top">

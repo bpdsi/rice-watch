@@ -1,5 +1,5 @@
 <?php
-host();
+	host();
 	function host(){
 		global $db_host;
 		global $db_user;

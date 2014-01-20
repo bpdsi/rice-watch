@@ -574,7 +574,13 @@
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td>&nbsp;</td>
+					<td
+						style="
+							background-image: url('img/ground2.png');
+							background-repeat: repeat-x;
+							background-position: 0px 110px;
+						"
+					>&nbsp;</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>

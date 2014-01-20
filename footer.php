@@ -2,11 +2,11 @@
 				<td style="width: auto;"></td>
 			</tr>
 			<tr>
-				<td colspan="20">
+				<td colspan="20" style="height: 23px;">
 					<div
 						style="
-							/*position: fixed;
-							bottom: 0px;*/
+							position: fixed;
+							bottom: 0px;
 							width: 100%;
 							background-color: #132743;
 							text-align: center;

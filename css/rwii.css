@@ -25,3 +25,49 @@ select{
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+table{
+	border-spacing:0;
+	border-collapse:collapse;
+}
+
+#menu_home{
+	padding: 0px 20px 0px 0px;
+	font-weight: bold;
+	font-size: 25px;
+	cursor: pointer
+}
+
+.mainMenu{
+	float: left;
+	color: #fff;
+}
+.menu{
+	padding: 5px 20px 5px 20px;
+}
+.menu:hover{
+	background-image: url('../images/header/leftMenuBG.png'), url('../images/header/rightMenuBG.png');
+	background-position: left,right;
+	background-repeat: no-repeat, no-repeat;
+	background-color: #700000;
+	cursor: pointer;
+}
+.subMenu{
+	display: none;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	background-color: #fff;
+	box-shadow: 0px 0px 5px #888;
+}
+.subMenuDetail{
+	white-space: nowrap;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #082441;
+}
+.subMenuDetail:hover{
+	background-color: #ffcaca;
+	color: #000;
+}

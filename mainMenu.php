@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	function showSub($parent,$oldParent){
 		?>
 			<div class="subMenu <?php echo $parent?> <?php echo $oldParent;?> table_bottomRadius <?php if($oldParent!="0"){echo "table_topRadius";}?>" id="subMenu_<?php echo $parent?>">
@@ -107,8 +107,7 @@
 			</div>
 		<?php
 	}
-?>
-<script type="text/javascript">
+?><script type="text/javascript">
 	$(document).ready(function(){
 		$('#menu_home').click(function(){
 			window.open('index.php','_self');
@@ -141,62 +140,6 @@
 		});
 	});
 </script>
-<style type="text/css">
-	html{
-		margin: 0px !important;
-		width: 100%;
-		height: 100%;
-	}
-	body{
-		margin: 0px !important;
-		width: 100%;
-		height: 100%;
-	}
-	table{
-		border-spacing:0;
-		border-collapse:collapse;
-	}
-	
-	#menu_home{
-		padding: 0px 20px 0px 0px;
-		font-weight: bold;
-		font-size: 25px;
-		cursor: pointer
-	}
-	
-	.mainMenu{
-		float: left;
-		color: #fff;
-	}
-	.menu{
-		padding: 5px 20px 5px 20px;
-	}
-	.menu:hover{
-		background-image: url('images/header/leftMenuBG.png'), url('images/header/rightMenuBG.png');
-		background-position: left,right;
-		background-repeat: no-repeat, no-repeat;
-		background-color: #700000;
-		cursor: pointer;
-	}
-	.subMenu{
-		display: none;
-		position: absolute;
-		left: 100px;
-		top: 100px;
-		background-color: #fff;
-		box-shadow: 0px 0px 5px #888;
-	}
-	.subMenuDetail{
-		white-space: nowrap;
-		padding-left: 20px;
-		padding-right: 20px;
-		color: #082441;
-	}
-	.subMenuDetail:hover{
-		background-color: #ffcaca;
-		color: #000;
-	}
-</style>
 <table class="noSpacing" style="width: 100%;height: 118px;background: none;border: none;">
 	<tr>
 		<td
